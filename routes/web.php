@@ -37,7 +37,7 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::prefix('admin')->middleware('auth')->group(function(){
 
-    Route::get('dashboard', 'HomeController@index')->name('admin.index');
+    Route::get('index', 'HomeController@index')->name('admin.index');
 
     Route::resource('users', 'UserController');
     Route::resource('author', 'AuthorController');
