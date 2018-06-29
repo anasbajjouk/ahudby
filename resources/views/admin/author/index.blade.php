@@ -16,12 +16,15 @@
                 <h3 class="card-title">All Authors</h3>
 
                 <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                    </div>
+                  <div class="">
+                    <form action="{{ route('search') }}" method="get" class="form-inline">
+                      
+                      <div class="input-group-append ">
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                        <input type="text" id="search" name="table_search" class="form-control" placeholder="Search">
+                      </div>
+                    </form>
+                   
                   </div>
                 </div>
               </div>
@@ -45,7 +48,7 @@
                         <td width="10%">{{ $author->name }}</td>
                         <td width="10%">{{ $author->bd }}</td>
                         <td width="10%" >{{ $author->deathdate }}</td>
-                        <td width="25%">{{ str_limit($author->bio,100) }}</td>
+                        <td width="30%">{{ str_limit($author->bio,100) }}</td>
                         <td width="5%">{{ str_limit($author->externalLink, 40) }}</td>
                         <td>
                           <a href="{{ route('author.show',$author->id) }}" class="btn btn-outline-info btn-sm"><i class="fa fa-info-circle"></i></a>

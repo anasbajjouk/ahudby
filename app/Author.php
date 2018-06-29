@@ -22,4 +22,8 @@ class Author extends Model
         return $this->hasMany(Photo::class);
     }
 
+    public function scopeSearchByName($query, $name)
+    {
+        return $query->where('name', 'LIKE', "%". $name . "%");
+    }
 }

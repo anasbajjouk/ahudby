@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
                         'EventsTableSeeder',
                         'CompositionsTableSeeder',
                         'AuthorsTableSeeder',
-                        'PhotosTableSeeder', 
-                        'UsersTableSeeder');
+                        'UsersTableSeeder',
+                        'PhotosTableSeeder');
 
         foreach ($seeders as $seeder){ 
             $this->call($seeder);

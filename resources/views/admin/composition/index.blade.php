@@ -23,7 +23,7 @@
     <!-- Page Content -->
     <div class="container">
 
-      <h1>Anthology Videos</h1>
+      <h1></h1>
       <br>
 
       <div class="row">

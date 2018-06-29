@@ -6,7 +6,7 @@
 @section('pageTitle', 'All Users')
 
 @section('content')
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <section class="content">
     <div class="row">
         
@@ -17,7 +17,7 @@
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                    <input type="text" id="search" name="table_search" class="form-control float-right" placeholder="Search" onkeyup="up()">
 
                     <div class="input-group-append">
                       <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
@@ -88,6 +88,7 @@
     </div>
 
 </section>
+
 
 @endsection
 

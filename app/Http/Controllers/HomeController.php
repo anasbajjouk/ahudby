@@ -23,6 +23,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $users = \App\User::count();
+        $authors = \App\Author::count();
+        $compositions = \App\Composition::count();
+        $videos = \App\Video::count();
+        $periods = \App\Period::count();
+        $events = \App\Event::count();
+        return view('admin.dashboard', compact('users', 'authors', 'compositions', 'videos', 'periods', 'events'));
     }
 }

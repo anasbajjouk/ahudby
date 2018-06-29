@@ -17,11 +17,10 @@ class CreatePhotosTable extends Migration
             $table->increments('id');
             $table->string('name', 100);
             $table->text('description');
-            $table->unsignedInteger('author_id');
-            $table->unsignedInteger('period_id');
+            $table->unsignedInteger('author_id')->nullable();
+            $table->unsignedInteger('period_id')->nullable();
+            $table->unsignedInteger('user_id')->nullable();
             $table->string('path', 255);
-            $table->date('startDate');
-            $table->date('endDate');
 
 
             $table->foreign('author_id')
@@ -31,6 +30,10 @@ class CreatePhotosTable extends Migration
             $table->foreign('period_id')
             ->references('id')
             ->on('periods');
+
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users');
 
             $table->timestamps();
         });

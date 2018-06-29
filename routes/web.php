@@ -32,7 +32,6 @@ Route::get('/videos','VideoController@userIndex')->name('videoUserIndex');
 
 Route::get('/photos','PhotoController@userIndex')->name('photoUserIndex');
 
-
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::prefix('admin')->middleware('auth')->group(function(){
@@ -46,5 +45,6 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::resource('video', 'VideoController');
     Route::resource('photo', 'PhotoController');
     Route::resource('composition', 'CompositionController');
-    //end
+    Route::get('/search','SearchController@search')->name('search');
+
 });
